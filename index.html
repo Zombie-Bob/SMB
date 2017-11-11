@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_top">
+    <style>
+        tr {
+            height:80px;
+        }
+
+        .bingoentry {
+            text-align:center;
+            vertical-align:middle;
+        }
+    </style>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Store Meeting Bingo!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><i class="fa fa-trophy-alt"></i> Store Meeting Bingo!</a>
+    </nav>
+<br/><br/>
+<div class='container'>
+    <div class='row'>
+        <div class="col col-xs-12">
+            <table class="table table-responsive table-bordered">
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s0'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s1'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s2'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s3'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s4'></div></td>
+                    </tr>
+                    <!-- Row 2-->
+                    <tr>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s5'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s6'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s7'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s8'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s9'></div></td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s10'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s11'></div></td>
+                        <td class='table-success'><div class='bingoentry'>BINGO! (Free Square)</div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s12'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s13'></div></td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s14'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s15'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s16'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s17'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s18'></div></td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s19'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s20'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s21'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s22'></div></td>
+                        <td onclick="clog(this);"><div class='bingoentry' id='s23'></div></td>
+                    </tr>                                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+	<script>
+		function shuffle (array) {
+		  var i = 0, j = 0, temp = null;
+
+		  for (i = array.length - 1; i > 0; i -= 1) {
+			j = Math.floor(Math.random() * (i + 1));
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		  }
+		  
+		  return array;
+		}
+		
+		var possibleOptions = [
+        'Starts > 10 minutes late',
+        'Reading the Credo',
+        '"Needs of the Business"',
+        'Operations not mentioned once',
+        '"Embrace Change"',
+        'Fire alarm test / drill',
+        'Genuis falls asleep',
+        'Ends late',
+        'Someone accidentally forgets',
+        '"Time to recognise"',
+        'Technical problems with the screens',
+        '"Amazing place to work"',
+        'Proud/Privilege to work here',
+        'Creative falls asleep',
+        'Someone arrives late',
+        '"Servicing the customer"',
+        'Business introductions',
+        '"Implicit promise"',
+        'Genuis Admin not mentioned once',
+        'Someone takes the register',
+        '"Best place to buy"',
+        'Holiday',
+        'Cringeworthy video from Angela',
+        'No breakfast'
+	  ]
+	  
+	  var data = shuffle(possibleOptions);
+	  
+	  for (var i=0; i<=23; i++) {
+	    var el = "s"+i;
+	    console.log(el);
+	  	document.getElementById("s"+i).innerHTML = data[i];
+	  }
+	
+		function clog(sq) {
+			if (!sq.classList.contains('table-success')) {
+				sq.classList.add('table-success');
+			} else {
+				sq.classList.remove('table-success');
+			}
+		}
+	</script>
+  </body>
+</html>
+
+
